@@ -19,6 +19,8 @@
 
         function handleQueryResponse(response) {
             var data = response.getDataTable();
+            data.removeColumn(1);
+            data.removeColumn(2);
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
             chart.draw(data, null);
         }
